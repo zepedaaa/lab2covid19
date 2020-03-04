@@ -57,8 +57,8 @@ namespace MVCLaboratorio.Controllers
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@idvideo", idvideo));
 
-
-            return View();
+            BaseHelper.ejecutarSentencia("sp_video_delete", CommandType.StoredProcedure, parametros);
+            return RedirectToAction("Index", "Home");
         }
 
 
@@ -70,9 +70,17 @@ namespace MVCLaboratorio.Controllers
         }
         //---------------------------Edit (procesado de datos)
         [HttpPost]
-        public ActionResult Edit(int idvideo, string titulo, int reproduccion, string url)
+        public ActionResult Edit(string titulo, int reproduccion, string url, int idvideo)
         {
-            return View();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@titulo", titulo));
+            parametros.Add(new SqlParameter("@reproduccion", reproduccion));
+            parametros.Add(new SqlParameter("@url", url));
+            parametros.Add(new SqlParameter("@idvideo", idvideo));
+
+            BaseHelper.ejecutarSentencia("sp_video_update", CommandType.StoredProcedure, parametros);
+
+            return RedirectToAction("Index", "Home");
         }
 
     }

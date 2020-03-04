@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using System.Data;
+using System.Data.SqlClient;
+using MVCLaboratorio.Utilerias;
+
 namespace MVCLaboratorio.Controllers
 {
     public class HomeController : Controller
@@ -13,6 +17,8 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
+            //Consultar datos de la base de datos
+            ViewData["datavideo"] = BaseHelper.ejecutarConsulta("SELECT * FROM video", CommandType.Text);
             return View();
         }
 

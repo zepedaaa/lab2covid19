@@ -18,6 +18,7 @@
 
 .validation-summary-errors
 {
+    font-family: 'Open Sans-Serif', Sans-Serif;
     font-weight: bold;
     color: #ff0000;
 }
@@ -37,4 +38,49 @@ fieldset input
 {
     display: block;
     margin-bottom : 5px;
+}
+
+
+/*----------TUTORIAL MOD-----*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body 
+{
+    font-family: 'Open Sans-Serif', Sans-Serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.contenedor
+{
+    width 100%;
+    min-height: 100;
+    margin: 0 auto;
+    display: block;
+}
+
+.header
+{
+    background: #fff;
+}
+
+.menu-lateral
+{
+    background: #ccc;
+}
+
+.main
+{
+    background: #414141;
+}
+
+.titulo
+{
+    font-family: 'Open Sans-Serif', Sans-Serif;
 }
